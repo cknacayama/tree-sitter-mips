@@ -12,7 +12,7 @@ module.exports = grammar({
 
     rules: {
         source_file: $ =>
-            delimitedBy($._item, repeat1('\n')),
+            delimitedBy($._item, '\n'),
 
         _item: $ => choice(
             $.label,
