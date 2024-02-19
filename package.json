@@ -1,0 +1,14 @@
+{
+  "name": "tree-sitter-mips",
+  "version": "1.0.0",
+  "description": "tree-sitter implementation for mips assembly",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ckn",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.18.0"
+  }
+}

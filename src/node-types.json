@@ -1,0 +1,421 @@
+[
+  {
+    "type": "directive",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "directive_operand",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "directive_operand",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "immediate",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "immediate",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "instruction",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "operand",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "label",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "instruction",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "memory",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "immediate",
+          "named": true
+        },
+        {
+          "type": "register",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "operand",
+    "named": true,
+    "fields": {
+      "label": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "immediate",
+          "named": true
+        },
+        {
+          "type": "memory",
+          "named": true
+        },
+        {
+          "type": "register",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "register",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "register_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "register_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "instruction",
+          "named": true
+        },
+        {
+          "type": "label",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "$",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "a0",
+    "named": false
+  },
+  {
+    "type": "a1",
+    "named": false
+  },
+  {
+    "type": "a2",
+    "named": false
+  },
+  {
+    "type": "a3",
+    "named": false
+  },
+  {
+    "type": "at",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "fp",
+    "named": false
+  },
+  {
+    "type": "gp",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "k0",
+    "named": false
+  },
+  {
+    "type": "k1",
+    "named": false
+  },
+  {
+    "type": "ra",
+    "named": false
+  },
+  {
+    "type": "s0",
+    "named": false
+  },
+  {
+    "type": "s1",
+    "named": false
+  },
+  {
+    "type": "s2",
+    "named": false
+  },
+  {
+    "type": "s3",
+    "named": false
+  },
+  {
+    "type": "s4",
+    "named": false
+  },
+  {
+    "type": "s5",
+    "named": false
+  },
+  {
+    "type": "s6",
+    "named": false
+  },
+  {
+    "type": "s7",
+    "named": false
+  },
+  {
+    "type": "sp",
+    "named": false
+  },
+  {
+    "type": "t0",
+    "named": false
+  },
+  {
+    "type": "t1",
+    "named": false
+  },
+  {
+    "type": "t2",
+    "named": false
+  },
+  {
+    "type": "t3",
+    "named": false
+  },
+  {
+    "type": "t4",
+    "named": false
+  },
+  {
+    "type": "t5",
+    "named": false
+  },
+  {
+    "type": "t6",
+    "named": false
+  },
+  {
+    "type": "t7",
+    "named": false
+  },
+  {
+    "type": "t8",
+    "named": false
+  },
+  {
+    "type": "t9",
+    "named": false
+  },
+  {
+    "type": "v0",
+    "named": false
+  },
+  {
+    "type": "v1",
+    "named": false
+  },
+  {
+    "type": "zero",
+    "named": false
+  }
+]
