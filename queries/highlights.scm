@@ -24,6 +24,8 @@
 (label
   name: (identifier) @label)
 (operand 
-  label: (identifier) @label)
+  (identifier) @label)
 (directive_operand
-  label: (identifier) @label)
+  (identifier) @label)
+(memory
+  (identifier) @label)

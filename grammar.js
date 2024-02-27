@@ -28,7 +28,7 @@ module.exports = grammar({
 
         instruction: $ => seq(
             field('name', $.identifier),
-            delimitedBy($.operand, ','),
+            optional($.operand_list),
         ),
 
         directive: $ => seq(
@@ -37,15 +37,21 @@ module.exports = grammar({
             delimitedBy($.directive_operand, ','),
         ),
 
+        operand_list: $ => seq(
+            $.operand,
+            optional(seq(',', $.operand)),
+            optional(seq(',', $.operand)),
+        ),
+
         operand: $ => choice(
-            field('label', $.identifier),
+            $.identifier,
             $.register,
             $.immediate,
             $.memory,
         ),
 
         directive_operand: $ => choice(
-            field('label', $.identifier),
+            $.identifier,
             $.immediate,
             $.string,
         ),
@@ -64,6 +70,10 @@ module.exports = grammar({
             'sp',
             'fp',
             'ra',
+            '0', '1', '2', '3', '4', '5', '6', '7',
+            '8', '9', '10', '11', '12', '13', '14', '15',
+            '16', '17', '18', '19', '20', '21', '22', '23',
+            '24', '25', '26', '27', '28', '29', '30', '31',
         ),
 
         immediate: $ => seq(
@@ -83,7 +93,7 @@ module.exports = grammar({
         escape_sequence: $ => token.immediate(/\\./),
 
         memory: $ => seq(
-            choice($.immediate, field('label', $.identifier)),
+            choice($.immediate, $.identifier),
             '(',
             $.register,
             ')',
@@ -97,6 +107,7 @@ module.exports = grammar({
         )),
     },
 });
+
 
 function delimitedBy(rule, delimiter) {
     return optional(delimitedBy1(rule, delimiter));
