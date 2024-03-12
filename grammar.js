@@ -1,3 +1,20 @@
+const register_names = [
+    'zero',
+    'at',
+    'v0', 'v1',
+    'a0', 'a1', 'a2', 'a3',
+    't0', 't1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9',
+    's0', 's1', 's2', 's3', 's4', 's5', 's6', 's7',
+    'k0', 'k1',
+    'gp',
+    'sp',
+    'fp',
+    'ra',
+];
+const register_numbers = Array.from(Array(32).keys()).map(n => n.toString());
+const floating_register_names = register_numbers.map(n => `f${n}`);
+
+
 module.exports = grammar({
     name: 'mips',
 
@@ -27,8 +44,14 @@ module.exports = grammar({
         ),
 
         instruction: $ => seq(
-            field('name', $.identifier),
+            field('name', $.instruction_name),
             optional($.operand_list),
+        ),
+
+        instruction_name: $ => seq(
+            $.identifier,
+            optional(seq('.', $.identifier)),
+            optional(seq('.', $.identifier)),
         ),
 
         directive: $ => seq(
@@ -59,21 +82,9 @@ module.exports = grammar({
         register: $ => seq('$', $.register_name),
 
         register_name: $ => choice(
-            'zero',
-            'at',
-            'v0', 'v1',
-            'a0', 'a1', 'a2', 'a3',
-            't0', 't1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9',
-            's0', 's1', 's2', 's3', 's4', 's5', 's6', 's7',
-            'k0', 'k1',
-            'gp',
-            'sp',
-            'fp',
-            'ra',
-            '0', '1', '2', '3', '4', '5', '6', '7',
-            '8', '9', '10', '11', '12', '13', '14', '15',
-            '16', '17', '18', '19', '20', '21', '22', '23',
-            '24', '25', '26', '27', '28', '29', '30', '31',
+            ...register_names,
+            ...register_numbers,
+            ...floating_register_names,
         ),
 
         immediate: $ => seq(
@@ -107,7 +118,6 @@ module.exports = grammar({
         )),
     },
 });
-
 
 function delimitedBy(rule, delimiter) {
     return optional(delimitedBy1(rule, delimiter));

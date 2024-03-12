@@ -62,7 +62,7 @@
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "instruction_name",
             "named": true
           }
         ]
@@ -74,6 +74,21 @@
       "types": [
         {
           "type": "operand_list",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "instruction_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -427,6 +442,134 @@
   {
     "type": "escape_sequence",
     "named": true
+  },
+  {
+    "type": "f0",
+    "named": false
+  },
+  {
+    "type": "f1",
+    "named": false
+  },
+  {
+    "type": "f10",
+    "named": false
+  },
+  {
+    "type": "f11",
+    "named": false
+  },
+  {
+    "type": "f12",
+    "named": false
+  },
+  {
+    "type": "f13",
+    "named": false
+  },
+  {
+    "type": "f14",
+    "named": false
+  },
+  {
+    "type": "f15",
+    "named": false
+  },
+  {
+    "type": "f16",
+    "named": false
+  },
+  {
+    "type": "f17",
+    "named": false
+  },
+  {
+    "type": "f18",
+    "named": false
+  },
+  {
+    "type": "f19",
+    "named": false
+  },
+  {
+    "type": "f2",
+    "named": false
+  },
+  {
+    "type": "f20",
+    "named": false
+  },
+  {
+    "type": "f21",
+    "named": false
+  },
+  {
+    "type": "f22",
+    "named": false
+  },
+  {
+    "type": "f23",
+    "named": false
+  },
+  {
+    "type": "f24",
+    "named": false
+  },
+  {
+    "type": "f25",
+    "named": false
+  },
+  {
+    "type": "f26",
+    "named": false
+  },
+  {
+    "type": "f27",
+    "named": false
+  },
+  {
+    "type": "f28",
+    "named": false
+  },
+  {
+    "type": "f29",
+    "named": false
+  },
+  {
+    "type": "f3",
+    "named": false
+  },
+  {
+    "type": "f30",
+    "named": false
+  },
+  {
+    "type": "f31",
+    "named": false
+  },
+  {
+    "type": "f4",
+    "named": false
+  },
+  {
+    "type": "f5",
+    "named": false
+  },
+  {
+    "type": "f6",
+    "named": false
+  },
+  {
+    "type": "f7",
+    "named": false
+  },
+  {
+    "type": "f8",
+    "named": false
+  },
+  {
+    "type": "f9",
+    "named": false
   },
   {
     "type": "fp",

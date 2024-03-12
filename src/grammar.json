@@ -88,7 +88,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "instruction_name"
           }
         },
         {
@@ -97,6 +97,57 @@
             {
               "type": "SYMBOL",
               "name": "operand_list"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "instruction_name": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "."
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "."
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                }
+              ]
             },
             {
               "type": "BLANK"
@@ -515,6 +566,134 @@
         {
           "type": "STRING",
           "value": "31"
+        },
+        {
+          "type": "STRING",
+          "value": "f0"
+        },
+        {
+          "type": "STRING",
+          "value": "f1"
+        },
+        {
+          "type": "STRING",
+          "value": "f2"
+        },
+        {
+          "type": "STRING",
+          "value": "f3"
+        },
+        {
+          "type": "STRING",
+          "value": "f4"
+        },
+        {
+          "type": "STRING",
+          "value": "f5"
+        },
+        {
+          "type": "STRING",
+          "value": "f6"
+        },
+        {
+          "type": "STRING",
+          "value": "f7"
+        },
+        {
+          "type": "STRING",
+          "value": "f8"
+        },
+        {
+          "type": "STRING",
+          "value": "f9"
+        },
+        {
+          "type": "STRING",
+          "value": "f10"
+        },
+        {
+          "type": "STRING",
+          "value": "f11"
+        },
+        {
+          "type": "STRING",
+          "value": "f12"
+        },
+        {
+          "type": "STRING",
+          "value": "f13"
+        },
+        {
+          "type": "STRING",
+          "value": "f14"
+        },
+        {
+          "type": "STRING",
+          "value": "f15"
+        },
+        {
+          "type": "STRING",
+          "value": "f16"
+        },
+        {
+          "type": "STRING",
+          "value": "f17"
+        },
+        {
+          "type": "STRING",
+          "value": "f18"
+        },
+        {
+          "type": "STRING",
+          "value": "f19"
+        },
+        {
+          "type": "STRING",
+          "value": "f20"
+        },
+        {
+          "type": "STRING",
+          "value": "f21"
+        },
+        {
+          "type": "STRING",
+          "value": "f22"
+        },
+        {
+          "type": "STRING",
+          "value": "f23"
+        },
+        {
+          "type": "STRING",
+          "value": "f24"
+        },
+        {
+          "type": "STRING",
+          "value": "f25"
+        },
+        {
+          "type": "STRING",
+          "value": "f26"
+        },
+        {
+          "type": "STRING",
+          "value": "f27"
+        },
+        {
+          "type": "STRING",
+          "value": "f28"
+        },
+        {
+          "type": "STRING",
+          "value": "f29"
+        },
+        {
+          "type": "STRING",
+          "value": "f30"
+        },
+        {
+          "type": "STRING",
+          "value": "f31"
         }
       ]
     },

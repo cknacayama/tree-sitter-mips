@@ -19,8 +19,7 @@
 (immediate) @number
 (comment) @comment
 (directive) @keyword
-(instruction
-  name: (identifier) @function)
+(instruction_name) @function
 (label
   name: (identifier) @label)
 (operand 
