@@ -17,6 +17,7 @@
 (escape_sequence) @string.escape
 (register) @variable.builtin
 (immediate) @number
+(float) @number
 (comment) @comment
 (directive) @keyword
 (instruction_name) @function

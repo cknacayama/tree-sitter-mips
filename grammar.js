@@ -11,9 +11,8 @@ const register_names = [
     'fp',
     'ra',
 ];
-const register_numbers = Array.from(Array(32).keys()).map(n => n.toString());
+const register_numbers = Array.from({ length: 32 }, (_, i) => i.toString());
 const floating_register_names = register_numbers.map(n => `f${n}`);
-
 
 module.exports = grammar({
     name: 'mips',
@@ -76,6 +75,7 @@ module.exports = grammar({
         directive_operand: $ => choice(
             $.identifier,
             $.immediate,
+            $.float,
             $.string,
         ),
 
@@ -87,10 +87,8 @@ module.exports = grammar({
             ...floating_register_names,
         ),
 
-        immediate: $ => seq(
-            optional('-'),
-            /[0-9]+/,
-        ),
+        immediate: $ => /-?[0-9]+/,
+        float: $ => /-?[0-9]+\.[0-9]+/,
 
         string: $ => seq(
             '"',
@@ -101,7 +99,7 @@ module.exports = grammar({
             '"',
         ),
 
-        escape_sequence: $ => token.immediate(/\\./),
+        escape_sequence: $ => /\\./,
 
         memory: $ => seq(
             choice($.immediate, $.identifier),
@@ -112,10 +110,7 @@ module.exports = grammar({
 
         identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
 
-        comment: $ => token(seq(
-            '#',
-            /[^\n]*/
-        )),
+        comment: $ => /#[^\n]*/
     },
 });
 

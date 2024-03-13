@@ -34,6 +34,10 @@
       "required": true,
       "types": [
         {
+          "type": "float",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -47,11 +51,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "immediate",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "instruction",
@@ -273,10 +272,6 @@
   },
   {
     "type": ",",
-    "named": false
-  },
-  {
-    "type": "-",
     "named": false
   },
   {
@@ -572,6 +567,10 @@
     "named": false
   },
   {
+    "type": "float",
+    "named": true
+  },
+  {
     "type": "fp",
     "named": false
   },
@@ -581,6 +580,10 @@
   },
   {
     "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "immediate",
     "named": true
   },
   {
