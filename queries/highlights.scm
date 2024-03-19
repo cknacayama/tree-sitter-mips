@@ -15,11 +15,11 @@
 ] @string
 
 (escape_sequence) @string.escape
-(register) @variable.builtin
+(register_name) @variable.builtin
 (immediate) @number
 (float) @number
 (comment) @comment
-(directive) @keyword
+(directive_name) @keyword
 (instruction_name) @function
 (label
   name: (identifier) @label)

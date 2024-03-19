@@ -54,9 +54,13 @@ module.exports = grammar({
         ),
 
         directive: $ => seq(
-            '.',
-            field('name', $.identifier),
+            field('name', $.directive_name),
             delimitedBy($.directive_operand, ','),
+        ),
+
+        directive_name: $ => seq(
+            '.',
+            $.identifier,
         ),
 
         operand_list: $ => seq(
@@ -102,7 +106,7 @@ module.exports = grammar({
         escape_sequence: $ => /\\./,
 
         memory: $ => seq(
-            choice($.immediate, $.identifier),
+            optional(choice($.immediate, $.identifier)),
             '(',
             $.register,
             ')',
